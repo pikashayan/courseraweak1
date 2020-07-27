@@ -40,3 +40,7 @@ body{
 .navbar-dark{
     background-color: #512BAD;
 }
+#res{
+    color: black;
+    text-decoration: none;
+}
