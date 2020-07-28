@@ -184,7 +184,7 @@
         </div>
     </header>
     <div class="container">
-
+        <!-- Carousel -->
     <div class="row row-content">
         <div class="col">
             <div id="mycarousel" class="carousel slide" data-ride="carousel">
@@ -213,17 +213,28 @@
                         </div>
                     </div>
                 </div>
+                <!-- Adding Slide Indicators to CArousel -->
                 <ol class="carousel-indicators">
                     <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#mycarousel" data-slide-to="1" ></li>
                     <li data-target="#mycarousel" data-slide-to="2" ></li>
                 </ol>
+                <!-- Adding Manual Control to Carousel -->
                 <a class="carousel-control-prev" href="#mycarousel" data-slide="prev" role="button">
                     <span class="carousel-control-prev-icon"></span>
                 </a>
                 <a class="carousel-control-next" href="#mycarousel" data-slide="next" role="button">
                     <span class="carousel-control-next-icon"></span>
                 </a>
+                <!-- Adding Pause Play Buttons To Carousel -->
+                <div class="btn-group" id="carouselButton">
+                    <button class="btn btn-danger btn-sm" id="carousel-pause">
+                        <span class="fa fa-pause"></span>
+                    </button>
+                    <button class="btn btn-danger btn-sm" id="carousel-play">
+                        <span class="fa fa-play"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -319,11 +330,23 @@
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- <script>
+        
+        <script>
+            //Changing Carousel Interval 
             $(document).ready(function(){
-                $('[data-toggle="tooltip"]').tooltip();
+                $('#mycarousel').carousel({
+                    interval: 1000
+                })
+                //Adding Pause Button Properties
+                $("#carousel-pause").click(function(){
+                    $("#mycarousel").carousel('pause');
+                });
+                //Adding Play Button Properties
+                $("#carousel-play").click(function(){
+                    $("#mycarousel").carousel('cycle');
+                });
             });
-        </script> -->
+        </script>
 </body>
 
 </html>
